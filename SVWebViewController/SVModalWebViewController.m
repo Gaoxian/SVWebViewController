@@ -67,4 +67,7 @@
     return self.webViewController.delegate;
 }
 
+- (void)reloadWebView {
+    [self.webViewController reloadWebView];
+}
 @end

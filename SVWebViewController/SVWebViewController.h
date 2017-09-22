@@ -15,4 +15,5 @@
 @property (nonatomic, weak) id<UIWebViewDelegate> delegate;
 @property (nonatomic) BOOL showsNavigationToolBar;
 
+- (void)reloadWebView;
 @end

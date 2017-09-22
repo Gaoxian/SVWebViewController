@@ -314,4 +314,8 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
+- (void)reloadWebView {
+    [self.webView reload];
+}
+
 @end

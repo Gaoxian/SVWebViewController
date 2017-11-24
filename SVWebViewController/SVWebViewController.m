@@ -241,6 +241,13 @@
         self.navigationItem.title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
     }
     
+    /**
+     禁用常按
+     */
+    [webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.style.webkitUserSelect='none';"];
+    [webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.style.webkitTouchCallout='none';"];
+
+    
     [self updateToolbarItems];
     
     if ([self.delegate respondsToSelector:@selector(webViewDidFinishLoad:)]) {

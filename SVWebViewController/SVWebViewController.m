@@ -30,9 +30,14 @@
 
 - (void)dealloc {
     [self.webView stopLoading];
+    self.webView = nil;
+    self.request = nil;
+    self.backBarButtonItem = nil;
+    self.forwardBarButtonItem = nil;
+    self.refreshBarButtonItem = nil;
+    self.stopBarButtonItem = nil;
+    self.actionBarButtonItem = nil;
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-    self.webView.delegate = nil;
-    self.delegate = nil;
 }
 
 - (instancetype)initWithAddress:(NSString *)urlString {
@@ -65,16 +70,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self updateToolbarItems];
-}
-
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    self.webView = nil;
-    _backBarButtonItem = nil;
-    _forwardBarButtonItem = nil;
-    _refreshBarButtonItem = nil;
-    _stopBarButtonItem = nil;
-    _actionBarButtonItem = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
